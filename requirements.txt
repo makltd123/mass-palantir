@@ -1,0 +1,3 @@
+mistralai>=2.10
+pandas>=2.3
+Faker>=40

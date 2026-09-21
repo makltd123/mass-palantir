@@ -1,0 +1,16 @@
+﻿id,supplier_id,product_category_id,delivery_terms,delivery_days
+1,9,3,EXW,32
+2,10,4,CIF,19
+3,3,5,DAP,10
+4,1,1,FOB,45
+5,3,4,EXW,9
+6,7,4,EXW,34
+7,9,3,EXW,5
+8,2,5,CIF,26
+9,2,3,DAP,15
+10,8,1,CIF,37
+11,3,5,FCA,45
+12,5,5,EXW,17
+13,3,3,FOB,39
+14,9,1,EXW,25
+15,8,1,FCA,28

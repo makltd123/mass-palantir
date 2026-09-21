@@ -1,0 +1,312 @@
+{
+  "column_classification": {
+    "columns_analysis": [
+      {
+        "table": "customers",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "customers",
+        "column": "company_name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "customers",
+        "column": "city",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "customers",
+        "column": "email",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "contacts",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "contacts",
+        "column": "customer_id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "contacts",
+        "column": "name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "contacts",
+        "column": "phone",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "contacts",
+        "column": "position",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "product_categories",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "product_categories",
+        "column": "category_name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "inventory",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "inventory",
+        "column": "category_id",
+        "classification": "junk",
+        "reason": "мало уникальных коротких значений"
+      },
+      {
+        "table": "inventory",
+        "column": "product_name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "inventory",
+        "column": "stock_quantity",
+        "classification": "key",
+        "reason": "совпадает с order_items.id"
+      },
+      {
+        "table": "inventory",
+        "column": "warehouse_id",
+        "classification": "junk",
+        "reason": "мало уникальных коротких значений"
+      },
+      {
+        "table": "warehouses",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "warehouses",
+        "column": "warehouse_name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "warehouses",
+        "column": "city",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "warehouses",
+        "column": "capacity",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "suppliers",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "suppliers",
+        "column": "supplier_name",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "suppliers",
+        "column": "country",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "suppliers",
+        "column": "email",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "supplier_id",
+        "classification": "key",
+        "reason": "совпадает с customers.id"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "product_category_id",
+        "classification": "junk",
+        "reason": "мало уникальных коротких значений"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "delivery_terms",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "delivery_days",
+        "classification": "key",
+        "reason": "совпадает с orders.id"
+      },
+      {
+        "table": "orders",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "orders",
+        "column": "customer_id",
+        "classification": "key",
+        "reason": "совпадает с customers.id"
+      },
+      {
+        "table": "orders",
+        "column": "order_date",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "orders",
+        "column": "status",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "order_items",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "order_items",
+        "column": "order_id",
+        "classification": "key",
+        "reason": "совпадает с orders.id"
+      },
+      {
+        "table": "order_items",
+        "column": "inventory_id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "order_items",
+        "column": "quantity",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "id",
+        "classification": "key",
+        "reason": "последовательные целые числа"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "inventory_id",
+        "classification": "key",
+        "reason": "совпадает с customers.id"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "supplier_id",
+        "classification": "key",
+        "reason": "совпадает с customers.id"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "quantity",
+        "classification": "key",
+        "reason": "совпадает с order_items.id"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "request_date",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "status",
+        "classification": "business",
+        "reason": "осмысленное поле"
+      }
+    ],
+    "junk_columns": [
+      "inventory.category_id",
+      "inventory.warehouse_id",
+      "supplier_contracts.product_category_id"
+    ],
+    "key_columns": [
+      "customers.id",
+      "contacts.id",
+      "contacts.customer_id",
+      "product_categories.id",
+      "inventory.id",
+      "inventory.stock_quantity",
+      "warehouses.id",
+      "suppliers.id",
+      "supplier_contracts.id",
+      "supplier_contracts.supplier_id",
+      "supplier_contracts.delivery_days",
+      "orders.id",
+      "orders.customer_id",
+      "order_items.id",
+      "order_items.order_id",
+      "order_items.inventory_id",
+      "order_items.quantity",
+      "purchase_requests.id",
+      "purchase_requests.inventory_id",
+      "purchase_requests.supplier_id",
+      "purchase_requests.quantity"
+    ]
+  },
+  "entity_graph": {
+    "entities": [],
+    "relationships": [],
+    "field_matches": []
+  },
+  "duplicate_analysis": {
+    "candidate_pairs": [
+      {
+        "id_a": 3,
+        "id_b": 10,
+        "name_a": "ООО \"Куликова Инжиниринг\"",
+        "name_b": "ООО \"Калашникова Инжиниринг\"",
+        "name_ratio": 0.878,
+        "email_match": false,
+        "city_match": false,
+        "score": 0.878
+      }
+    ],
+    "confirmed_duplicates": []
+  }
+}

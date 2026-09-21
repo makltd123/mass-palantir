@@ -1,0 +1,252 @@
+{
+  "entities": [
+    {
+      "name": "Клиент",
+      "description": "Физическое или юридическое лицо, совершающее заказы",
+      "attributes": [
+        {
+          "field_name": "customer_id",
+          "source_tables": [
+            "customers"
+          ],
+          "source_columns": [
+            "customer_no"
+          ],
+          "description": "Уникальный идентификатор клиента"
+        },
+        {
+          "field_name": "full_name",
+          "source_tables": [
+            "customers"
+          ],
+          "source_columns": [
+            "full_name"
+          ],
+          "description": "Полное наименование клиента"
+        },
+        {
+          "field_name": "email",
+          "source_tables": [
+            "customers"
+          ],
+          "source_columns": [
+            "email"
+          ],
+          "description": "Адрес электронной почты клиента"
+        },
+        {
+          "field_name": "city",
+          "source_tables": [
+            "customers"
+          ],
+          "source_columns": [
+            "city"
+          ],
+          "description": "Город проживания или регистрации клиента"
+        }
+      ]
+    },
+    {
+      "name": "Заказ",
+      "description": "Документ, подтверждающий покупку товара",
+      "attributes": [
+        {
+          "field_name": "order_id",
+          "source_tables": [
+            "orders"
+          ],
+          "source_columns": [
+            "order_id"
+          ],
+          "description": "Уникальный идентификатор заказа"
+        },
+        {
+          "field_name": "order_date",
+          "source_tables": [
+            "orders"
+          ],
+          "source_columns": [
+            "order_date"
+          ],
+          "description": "Дата совершения заказа"
+        },
+        {
+          "field_name": "quantity_ordered",
+          "source_tables": [
+            "orders"
+          ],
+          "source_columns": [
+            "qty_ordered"
+          ],
+          "description": "Количество единиц товара в заказе"
+        }
+      ]
+    },
+    {
+      "name": "Товар",
+      "description": "Продукт, предлагаемый к продаже",
+      "attributes": [
+        {
+          "field_name": "product_id",
+          "source_tables": [
+            "inventory"
+          ],
+          "source_columns": [
+            "sku"
+          ],
+          "description": "Уникальный идентификатор товара (артикул)"
+        },
+        {
+          "field_name": "product_name",
+          "source_tables": [
+            "inventory"
+          ],
+          "source_columns": [
+            "product_name"
+          ],
+          "description": "Наименование товара"
+        },
+        {
+          "field_name": "quantity_in_stock",
+          "source_tables": [
+            "inventory"
+          ],
+          "source_columns": [
+            "quantity"
+          ],
+          "description": "Количество товара на складе"
+        },
+        {
+          "field_name": "warehouse_location",
+          "source_tables": [
+            "inventory"
+          ],
+          "source_columns": [
+            "warehouse"
+          ],
+          "description": "Местоположение склада, где хранится товар"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Клиент",
+      "to": "Заказ",
+      "type": "один_ко_многим",
+      "join_field": "client_ref",
+      "description": "Один клиент может сделать несколько заказов"
+    },
+    {
+      "from": "Заказ",
+      "to": "Товар",
+      "type": "один_ко_многим",
+      "join_field": "item_code",
+      "description": "Один заказ может содержать несколько товаров (позиций)"
+    }
+  ],
+  "field_matches": [
+    {
+      "semantic_field": "идентификатор_клиента",
+      "matches": [
+        {
+          "table": "customers",
+          "column": "customer_no"
+        },
+        {
+          "table": "orders",
+          "column": "client_ref"
+        }
+      ]
+    },
+    {
+      "semantic_field": "идентификатор_заказа",
+      "matches": [
+        {
+          "table": "orders",
+          "column": "order_id"
+        }
+      ]
+    },
+    {
+      "semantic_field": "идентификатор_товара",
+      "matches": [
+        {
+          "table": "inventory",
+          "column": "sku"
+        },
+        {
+          "table": "orders",
+          "column": "item_code"
+        }
+      ]
+    },
+    {
+      "semantic_field": "дата_заказа",
+      "matches": [
+        {
+          "table": "orders",
+          "column": "order_date"
+        }
+      ]
+    },
+    {
+      "semantic_field": "количество_товара",
+      "matches": [
+        {
+          "table": "orders",
+          "column": "qty_ordered"
+        },
+        {
+          "table": "inventory",
+          "column": "quantity"
+        }
+      ]
+    },
+    {
+      "semantic_field": "наименование_клиента",
+      "matches": [
+        {
+          "table": "customers",
+          "column": "full_name"
+        }
+      ]
+    },
+    {
+      "semantic_field": "наименование_товара",
+      "matches": [
+        {
+          "table": "inventory",
+          "column": "product_name"
+        }
+      ]
+    },
+    {
+      "semantic_field": "электронная_почта_клиента",
+      "matches": [
+        {
+          "table": "customers",
+          "column": "email"
+        }
+      ]
+    },
+    {
+      "semantic_field": "город_клиента",
+      "matches": [
+        {
+          "table": "customers",
+          "column": "city"
+        }
+      ]
+    },
+    {
+      "semantic_field": "склад_хранения",
+      "matches": [
+        {
+          "table": "inventory",
+          "column": "warehouse"
+        }
+      ]
+    }
+  ]
+}

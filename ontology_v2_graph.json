@@ -1,0 +1,1084 @@
+{
+  "column_classification": {
+    "columns_analysis": [
+      {
+        "table": "customers",
+        "column": "f_17",
+        "classification": "junk",
+        "reason": "случайный код без явного бизнес-смысла"
+      },
+      {
+        "table": "customers",
+        "column": "company_name",
+        "classification": "business",
+        "reason": "название компании"
+      },
+      {
+        "table": "customers",
+        "column": "city",
+        "classification": "business",
+        "reason": "город расположения компании"
+      },
+      {
+        "table": "customers",
+        "column": "email",
+        "classification": "business",
+        "reason": "электронная почта для связи"
+      },
+      {
+        "table": "customers",
+        "column": "flag_2",
+        "classification": "junk",
+        "reason": "непонятный флаг с ограниченным набором значений (A, B)"
+      },
+      {
+        "table": "contacts",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор контакта"
+      },
+      {
+        "table": "contacts",
+        "column": "customer_id",
+        "classification": "business",
+        "reason": "ссылка на клиента"
+      },
+      {
+        "table": "contacts",
+        "column": "name",
+        "classification": "business",
+        "reason": "имя контактного лица"
+      },
+      {
+        "table": "contacts",
+        "column": "phone",
+        "classification": "business",
+        "reason": "телефон для связи"
+      },
+      {
+        "table": "contacts",
+        "column": "position",
+        "classification": "business",
+        "reason": "должность контактного лица"
+      },
+      {
+        "table": "product_categories",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор категории"
+      },
+      {
+        "table": "product_categories",
+        "column": "category_name",
+        "classification": "business",
+        "reason": "название категории продукции"
+      },
+      {
+        "table": "inventory",
+        "column": "sku_code",
+        "classification": "business",
+        "reason": "уникальный код товара"
+      },
+      {
+        "table": "inventory",
+        "column": "category_id",
+        "classification": "business",
+        "reason": "ссылка на категорию продукта"
+      },
+      {
+        "table": "inventory",
+        "column": "product_name",
+        "classification": "business",
+        "reason": "название продукта"
+      },
+      {
+        "table": "inventory",
+        "column": "stock_quantity",
+        "classification": "business",
+        "reason": "количество на складе"
+      },
+      {
+        "table": "inventory",
+        "column": "warehouse_id",
+        "classification": "business",
+        "reason": "ссылка на склад"
+      },
+      {
+        "table": "warehouses",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор склада"
+      },
+      {
+        "table": "warehouses",
+        "column": "warehouse_name",
+        "classification": "business",
+        "reason": "название склада"
+      },
+      {
+        "table": "warehouses",
+        "column": "city",
+        "classification": "business",
+        "reason": "город расположения склада"
+      },
+      {
+        "table": "warehouses",
+        "column": "capacity",
+        "classification": "business",
+        "reason": "вместимость склада"
+      },
+      {
+        "table": "suppliers",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор поставщика"
+      },
+      {
+        "table": "suppliers",
+        "column": "supplier_name",
+        "classification": "business",
+        "reason": "название поставщика"
+      },
+      {
+        "table": "suppliers",
+        "column": "country",
+        "classification": "business",
+        "reason": "страна поставщика"
+      },
+      {
+        "table": "suppliers",
+        "column": "email",
+        "classification": "business",
+        "reason": "электронная почта для связи"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор контракта"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "supplier_id",
+        "classification": "business",
+        "reason": "ссылка на поставщика"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "product_category_id",
+        "classification": "business",
+        "reason": "ссылка на категорию продукта"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "delivery_terms",
+        "classification": "business",
+        "reason": "условия поставки (Incoterms)"
+      },
+      {
+        "table": "supplier_contracts",
+        "column": "delivery_days",
+        "classification": "business",
+        "reason": "срок поставки в днях"
+      },
+      {
+        "table": "orders",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор заказа"
+      },
+      {
+        "table": "orders",
+        "column": "ref_9",
+        "classification": "junk",
+        "reason": "непонятная ссылка без явного бизнес-смысла"
+      },
+      {
+        "table": "orders",
+        "column": "order_date",
+        "classification": "business",
+        "reason": "дата заказа"
+      },
+      {
+        "table": "orders",
+        "column": "status",
+        "classification": "business",
+        "reason": "текущий статус заказа"
+      },
+      {
+        "table": "orders",
+        "column": "status_old_v1",
+        "classification": "junk",
+        "reason": "устаревшее поле статуса с непонятными значениями (Y2, X1)"
+      },
+      {
+        "table": "order_items",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор позиции заказа"
+      },
+      {
+        "table": "order_items",
+        "column": "order_id",
+        "classification": "business",
+        "reason": "ссылка на заказ"
+      },
+      {
+        "table": "order_items",
+        "column": "item_ref",
+        "classification": "business",
+        "reason": "ссылка на товар"
+      },
+      {
+        "table": "order_items",
+        "column": "quantity",
+        "classification": "business",
+        "reason": "количество товара в заказе"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "id",
+        "classification": "business",
+        "reason": "уникальный идентификатор заявки"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "inventory_id",
+        "classification": "business",
+        "reason": "ссылка на товар в инвентаре"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "supplier_id",
+        "classification": "business",
+        "reason": "ссылка на поставщика"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "quantity",
+        "classification": "business",
+        "reason": "запрашиваемое количество"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "request_date",
+        "classification": "business",
+        "reason": "дата создания заявки"
+      },
+      {
+        "table": "purchase_requests",
+        "column": "status",
+        "classification": "business",
+        "reason": "статус заявки"
+      }
+    ],
+    "junk_columns": [
+      "customers.f_17",
+      "customers.flag_2",
+      "orders.ref_9",
+      "orders.status_old_v1"
+    ]
+  },
+  "entity_graph": {
+    "entities": [
+      {
+        "name": "Customer",
+        "description": "Клиент компании",
+        "attributes": [
+          {
+            "field_name": "customer_id",
+            "source_tables": [
+              "customers",
+              "contacts"
+            ],
+            "source_columns": [
+              "company_name",
+              "id"
+            ],
+            "description": "Уникальный идентификатор клиента",
+            "is_key": true
+          },
+          {
+            "field_name": "company_name",
+            "source_tables": [
+              "customers"
+            ],
+            "source_columns": [
+              "company_name"
+            ],
+            "description": "Название компании клиента",
+            "is_key": false
+          },
+          {
+            "field_name": "city",
+            "source_tables": [
+              "customers"
+            ],
+            "source_columns": [
+              "city"
+            ],
+            "description": "Город расположения клиента",
+            "is_key": false
+          },
+          {
+            "field_name": "email",
+            "source_tables": [
+              "customers"
+            ],
+            "source_columns": [
+              "email"
+            ],
+            "description": "Электронная почта клиента",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "Contact",
+        "description": "Контактное лицо клиента",
+        "attributes": [
+          {
+            "field_name": "contact_id",
+            "source_tables": [
+              "contacts"
+            ],
+            "source_columns": [
+              "id"
+            ],
+            "description": "Уникальный идентификатор контакта",
+            "is_key": true
+          },
+          {
+            "field_name": "customer_id",
+            "source_tables": [
+              "contacts"
+            ],
+            "source_columns": [
+              "customer_id"
+            ],
+            "description": "Идентификатор клиента, к которому относится контакт",
+            "is_key": false
+          },
+          {
+            "field_name": "name",
+            "source_tables": [
+              "contacts"
+            ],
+            "source_columns": [
+              "name"
+            ],
+            "description": "ФИО контактного лица",
+            "is_key": false
+          },
+          {
+            "field_name": "phone",
+            "source_tables": [
+              "contacts"
+            ],
+            "source_columns": [
+              "phone"
+            ],
+            "description": "Номер телефона контактного лица",
+            "is_key": false
+          },
+          {
+            "field_name": "position",
+            "source_tables": [
+              "contacts"
+            ],
+            "source_columns": [
+              "position"
+            ],
+            "description": "Должность контактного лица",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "ProductCategory",
+        "description": "Категория товара",
+        "attributes": [
+          {
+            "field_name": "category_id",
+            "source_tables": [
+              "product_categories",
+              "inventory",
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "id",
+              "category_id"
+            ],
+            "description": "Уникальный идентификатор категории",
+            "is_key": true
+          },
+          {
+            "field_name": "category_name",
+            "source_tables": [
+              "product_categories"
+            ],
+            "source_columns": [
+              "category_name"
+            ],
+            "description": "Название категории товара",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "Product",
+        "description": "Товар в инвентаре",
+        "attributes": [
+          {
+            "field_name": "product_id",
+            "source_tables": [
+              "inventory"
+            ],
+            "source_columns": [
+              "sku_code"
+            ],
+            "description": "Уникальный идентификатор товара (SKU)",
+            "is_key": true
+          },
+          {
+            "field_name": "category_id",
+            "source_tables": [
+              "inventory"
+            ],
+            "source_columns": [
+              "category_id"
+            ],
+            "description": "Идентификатор категории товара",
+            "is_key": false
+          },
+          {
+            "field_name": "product_name",
+            "source_tables": [
+              "inventory"
+            ],
+            "source_columns": [
+              "product_name"
+            ],
+            "description": "Название товара",
+            "is_key": false
+          },
+          {
+            "field_name": "stock_quantity",
+            "source_tables": [
+              "inventory"
+            ],
+            "source_columns": [
+              "stock_quantity"
+            ],
+            "description": "Количество товара на складе",
+            "is_key": false
+          },
+          {
+            "field_name": "warehouse_id",
+            "source_tables": [
+              "inventory"
+            ],
+            "source_columns": [
+              "warehouse_id"
+            ],
+            "description": "Идентификатор склада, где хранится товар",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "Warehouse",
+        "description": "Склад",
+        "attributes": [
+          {
+            "field_name": "warehouse_id",
+            "source_tables": [
+              "warehouses",
+              "inventory"
+            ],
+            "source_columns": [
+              "id",
+              "warehouse_id"
+            ],
+            "description": "Уникальный идентификатор склада",
+            "is_key": true
+          },
+          {
+            "field_name": "warehouse_name",
+            "source_tables": [
+              "warehouses"
+            ],
+            "source_columns": [
+              "warehouse_name"
+            ],
+            "description": "Название склада",
+            "is_key": false
+          },
+          {
+            "field_name": "city",
+            "source_tables": [
+              "warehouses"
+            ],
+            "source_columns": [
+              "city"
+            ],
+            "description": "Город расположения склада",
+            "is_key": false
+          },
+          {
+            "field_name": "capacity",
+            "source_tables": [
+              "warehouses"
+            ],
+            "source_columns": [
+              "capacity"
+            ],
+            "description": "Вместимость склада",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "Supplier",
+        "description": "Поставщик",
+        "attributes": [
+          {
+            "field_name": "supplier_id",
+            "source_tables": [
+              "suppliers",
+              "supplier_contracts",
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "id",
+              "supplier_id"
+            ],
+            "description": "Уникальный идентификатор поставщика",
+            "is_key": true
+          },
+          {
+            "field_name": "supplier_name",
+            "source_tables": [
+              "suppliers"
+            ],
+            "source_columns": [
+              "supplier_name"
+            ],
+            "description": "Название поставщика",
+            "is_key": false
+          },
+          {
+            "field_name": "country",
+            "source_tables": [
+              "suppliers"
+            ],
+            "source_columns": [
+              "country"
+            ],
+            "description": "Страна поставщика",
+            "is_key": false
+          },
+          {
+            "field_name": "email",
+            "source_tables": [
+              "suppliers"
+            ],
+            "source_columns": [
+              "email"
+            ],
+            "description": "Электронная почта поставщика",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "SupplierContract",
+        "description": "Контракт с поставщиком",
+        "attributes": [
+          {
+            "field_name": "contract_id",
+            "source_tables": [
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "id"
+            ],
+            "description": "Уникальный идентификатор контракта",
+            "is_key": true
+          },
+          {
+            "field_name": "supplier_id",
+            "source_tables": [
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "supplier_id"
+            ],
+            "description": "Идентификатор поставщика",
+            "is_key": false
+          },
+          {
+            "field_name": "category_id",
+            "source_tables": [
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "product_category_id"
+            ],
+            "description": "Идентификатор категории товара",
+            "is_key": false
+          },
+          {
+            "field_name": "delivery_terms",
+            "source_tables": [
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "delivery_terms"
+            ],
+            "description": "Условия поставки",
+            "is_key": false
+          },
+          {
+            "field_name": "delivery_days",
+            "source_tables": [
+              "supplier_contracts"
+            ],
+            "source_columns": [
+              "delivery_days"
+            ],
+            "description": "Количество дней доставки",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "Order",
+        "description": "Заказ",
+        "attributes": [
+          {
+            "field_name": "order_id",
+            "source_tables": [
+              "orders",
+              "order_items"
+            ],
+            "source_columns": [
+              "id",
+              "order_id"
+            ],
+            "description": "Уникальный идентификатор заказа",
+            "is_key": true
+          },
+          {
+            "field_name": "order_date",
+            "source_tables": [
+              "orders"
+            ],
+            "source_columns": [
+              "order_date"
+            ],
+            "description": "Дата заказа",
+            "is_key": false
+          },
+          {
+            "field_name": "status",
+            "source_tables": [
+              "orders"
+            ],
+            "source_columns": [
+              "status"
+            ],
+            "description": "Статус заказа",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "OrderItem",
+        "description": "Позиция заказа",
+        "attributes": [
+          {
+            "field_name": "order_item_id",
+            "source_tables": [
+              "order_items"
+            ],
+            "source_columns": [
+              "id"
+            ],
+            "description": "Уникальный идентификатор позиции заказа",
+            "is_key": true
+          },
+          {
+            "field_name": "order_id",
+            "source_tables": [
+              "order_items"
+            ],
+            "source_columns": [
+              "order_id"
+            ],
+            "description": "Идентификатор заказа",
+            "is_key": false
+          },
+          {
+            "field_name": "product_id",
+            "source_tables": [
+              "order_items"
+            ],
+            "source_columns": [
+              "item_ref"
+            ],
+            "description": "Идентификатор товара (SKU)",
+            "is_key": false
+          },
+          {
+            "field_name": "quantity",
+            "source_tables": [
+              "order_items"
+            ],
+            "source_columns": [
+              "quantity"
+            ],
+            "description": "Количество товара в позиции",
+            "is_key": false
+          }
+        ]
+      },
+      {
+        "name": "PurchaseRequest",
+        "description": "Заявка на закупку",
+        "attributes": [
+          {
+            "field_name": "request_id",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "id"
+            ],
+            "description": "Уникальный идентификатор заявки",
+            "is_key": true
+          },
+          {
+            "field_name": "inventory_id",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "inventory_id"
+            ],
+            "description": "Идентификатор товара в инвентаре",
+            "is_key": false
+          },
+          {
+            "field_name": "supplier_id",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "supplier_id"
+            ],
+            "description": "Идентификатор поставщика",
+            "is_key": false
+          },
+          {
+            "field_name": "quantity",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "quantity"
+            ],
+            "description": "Запрашиваемое количество",
+            "is_key": false
+          },
+          {
+            "field_name": "request_date",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "request_date"
+            ],
+            "description": "Дата заявки",
+            "is_key": false
+          },
+          {
+            "field_name": "status",
+            "source_tables": [
+              "purchase_requests"
+            ],
+            "source_columns": [
+              "status"
+            ],
+            "description": "Статус заявки",
+            "is_key": false
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "from": "Customer",
+        "to": "Contact",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "customer_id",
+          "to_field": "customer_id"
+        },
+        "description": "Один клиент может иметь несколько контактов"
+      },
+      {
+        "from": "ProductCategory",
+        "to": "Product",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "category_id",
+          "to_field": "category_id"
+        },
+        "description": "Одна категория может содержать несколько товаров"
+      },
+      {
+        "from": "Product",
+        "to": "Warehouse",
+        "type": "многие_ко_одному",
+        "join": {
+          "from_field": "warehouse_id",
+          "to_field": "warehouse_id"
+        },
+        "description": "Товар хранится на одном складе"
+      },
+      {
+        "from": "Supplier",
+        "to": "SupplierContract",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "supplier_id",
+          "to_field": "supplier_id"
+        },
+        "description": "Один поставщик может иметь несколько контрактов"
+      },
+      {
+        "from": "ProductCategory",
+        "to": "SupplierContract",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "category_id",
+          "to_field": "category_id"
+        },
+        "description": "Одна категория может быть связана с несколькими контрактами"
+      },
+      {
+        "from": "Order",
+        "to": "OrderItem",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "order_id",
+          "to_field": "order_id"
+        },
+        "description": "Один заказ может содержать несколько позиций"
+      },
+      {
+        "from": "Product",
+        "to": "OrderItem",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "product_id",
+          "to_field": "product_id"
+        },
+        "description": "Один товар может быть в нескольких позициях заказов"
+      },
+      {
+        "from": "Product",
+        "to": "PurchaseRequest",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "product_id",
+          "to_field": "inventory_id"
+        },
+        "description": "Один товар может быть в нескольких заявках на закупку"
+      },
+      {
+        "from": "Supplier",
+        "to": "PurchaseRequest",
+        "type": "один_ко_многим",
+        "join": {
+          "from_field": "supplier_id",
+          "to_field": "supplier_id"
+        },
+        "description": "Один поставщик может быть связан с несколькими заявками на закупку"
+      }
+    ],
+    "field_matches": [
+      {
+        "semantic_field": "customer_id",
+        "matches": [
+          {
+            "table": "customers",
+            "column": "company_name"
+          },
+          {
+            "table": "contacts",
+            "column": "customer_id"
+          }
+        ]
+      },
+      {
+        "semantic_field": "product_id",
+        "matches": [
+          {
+            "table": "inventory",
+            "column": "sku_code"
+          },
+          {
+            "table": "order_items",
+            "column": "item_ref"
+          }
+        ]
+      },
+      {
+        "semantic_field": "category_id",
+        "matches": [
+          {
+            "table": "product_categories",
+            "column": "id"
+          },
+          {
+            "table": "inventory",
+            "column": "category_id"
+          },
+          {
+            "table": "supplier_contracts",
+            "column": "product_category_id"
+          }
+        ]
+      },
+      {
+        "semantic_field": "warehouse_id",
+        "matches": [
+          {
+            "table": "warehouses",
+            "column": "id"
+          },
+          {
+            "table": "inventory",
+            "column": "warehouse_id"
+          }
+        ]
+      },
+      {
+        "semantic_field": "supplier_id",
+        "matches": [
+          {
+            "table": "suppliers",
+            "column": "id"
+          },
+          {
+            "table": "supplier_contracts",
+            "column": "supplier_id"
+          },
+          {
+            "table": "purchase_requests",
+            "column": "supplier_id"
+          }
+        ]
+      },
+      {
+        "semantic_field": "order_id",
+        "matches": [
+          {
+            "table": "orders",
+            "column": "id"
+          },
+          {
+            "table": "order_items",
+            "column": "order_id"
+          }
+        ]
+      }
+    ]
+  },
+  "duplicate_analysis": {
+    "duplicate_groups": [
+      {
+        "ids": [
+          1,
+          11,
+          12
+        ],
+        "confidence": "high",
+        "reason": "Одинаковое название 'Системы' с вариациями 'нАтонова', 'Миронова', 'Михеева' — очевидные опечатки или вариации написания"
+      },
+      {
+        "ids": [
+          2,
+          3,
+          14,
+          17,
+          18,
+          19
+        ],
+        "confidence": "high",
+        "reason": "Одинаковое название 'Инжиниринг' с вариациями 'Селезнева', 'Куликова', 'Меркушева', 'Орлова', 'Андреев', 'Максимов' — очевидные опечатки или вариации написания"
+      },
+      {
+        "ids": [
+          4,
+          10
+        ],
+        "confidence": "high",
+        "reason": "Одинаковое название 'Калашникова' с вариациями 'Системы' и 'Инжиниринг' — очевидные опечатки или вариации написания"
+      },
+      {
+        "ids": [
+          5
+        ],
+        "confidence": "low",
+        "reason": "Возможный дубль с другими названиями, но недостаточно данных для подтверждения"
+      },
+      {
+        "ids": [
+          6
+        ],
+        "confidence": "low",
+        "reason": "Возможный дубль с другими названиями, но недостаточно данных для подтверждения"
+      },
+      {
+        "ids": [
+          7,
+          8
+        ],
+        "confidence": "high",
+        "reason": "Одинаковое название 'Пром' с вариациями 'Савин' и 'Рогов' — очевидные опечатки или вариации написания"
+      },
+      {
+        "ids": [
+          9
+        ],
+        "confidence": "low",
+        "reason": "Возможный дубль с другими названиями, но недостаточно данных для подтверждения"
+      },
+      {
+        "ids": [
+          13,
+          15
+        ],
+        "confidence": "high",
+        "reason": "Одинаковое название 'Сервис' с вариациями 'Тимофеев' и 'Сафонов' — очевидные опечатки или вариации написания"
+      },
+      {
+        "ids": [
+          16
+        ],
+        "confidence": "low",
+        "reason": "Возможный дубль с другими названиями, но недостаточно данных для подтверждения"
+      },
+      {
+        "ids": [
+          20
+        ],
+        "confidence": "low",
+        "reason": "Возможный дубль с другими названиями, но недостаточно данных для подтверждения"
+      }
+    ]
+  }
+}
