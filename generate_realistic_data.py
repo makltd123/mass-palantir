@@ -1,8 +1,17 @@
+import argparse
+import os
 import random
 from datetime import datetime, timedelta
 
 import pandas as pd
 from faker import Faker
+
+# Куда писать CSV: все записи ниже идут относительными путями.
+_parser = argparse.ArgumentParser(description="Генератор чистых данных.")
+_parser.add_argument("--out-dir", default=".", help="каталог для CSV-файлов")
+_args = _parser.parse_args()
+os.makedirs(_args.out_dir, exist_ok=True)
+os.chdir(_args.out_dir)
 
 fake = Faker("ru_RU")
 random.seed(42)

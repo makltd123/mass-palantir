@@ -1,0 +1,20 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# v1 — исторический прототип под формат данных, которого в репозитории уже нет.
+# Он намеренно не правится, поэтому и не линтуется.
+exclude = ["ontology_builder.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# Промпты для LLM — длинные русские строки: перенос изменил бы текст промпта.
+"ontology_builder_v2.py" = ["E501"]
+"ontology_builder_v3.py" = ["E501"]
+# Генераторы — скрипты, исполняемые на уровне модуля.
+"generate_*.py" = ["E402"]

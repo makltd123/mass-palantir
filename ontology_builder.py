@@ -101,7 +101,10 @@ def build_ontology_via_llm(schemas: dict) -> dict:
     try:
         if not MISTRAL_API_KEY:
             raise RuntimeError("не задана переменная MISTRAL_API_KEY")
-        from mistralai.client import Mistral
+        try:  # путь импорта менялся между версиями SDK
+            from mistralai import Mistral
+        except ImportError:
+            from mistralai.client import Mistral
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model=MISTRAL_MODEL,

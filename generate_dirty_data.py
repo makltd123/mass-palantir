@@ -1,7 +1,19 @@
+import argparse
+import json
+import os
 import random
 from datetime import datetime, timedelta
+
 import pandas as pd
 from faker import Faker
+
+# Куда писать CSV и ключ ответов. Все записи ниже идут относительными путями,
+# поэтому достаточно один раз сменить рабочий каталог.
+_parser = argparse.ArgumentParser(description="Генератор «грязных» данных.")
+_parser.add_argument("--out-dir", default=".", help="каталог для CSV и answer_key.json")
+_args = _parser.parse_args()
+os.makedirs(_args.out_dir, exist_ok=True)
+os.chdir(_args.out_dir)
 
 fake = Faker("ru_RU")
 
@@ -34,7 +46,11 @@ answer_key = {
     "duplicate_customers": [],
     "typos": [],
     "date_formats": {},
-    "similar_products": []
+    "similar_products": [],
+    # Мусорные столбцы и пары «похожие, но разные товары» в машинном виде:
+    # ontology_builder_v3.py читает их из answer_key.json на этапе сверки.
+    "junk_columns": [],
+    "similar_products_not_to_merge": [],
 }
 
 
@@ -441,6 +457,9 @@ for name in [
 
 
 answer_key["similar_products"] = similar_pairs
+answer_key["similar_products_not_to_merge"] = [
+    list(pair["names"]) for pair in similar_pairs
+]
 
 
 
@@ -653,6 +672,8 @@ orders["status_old_v1"] = [
     for _ in range(len(orders))
 ]
 
+answer_key["junk_columns"].append("status_old_v1")
+
 
 
 # ==========================================================
@@ -785,6 +806,8 @@ customers["flag_2"] = [
     )
     for _ in range(len(customers))
 ]
+
+answer_key["junk_columns"].append("flag_2")
 
 
 
@@ -1183,6 +1206,22 @@ def print_answer_key():
 # ЗАПУСК
 # ==========================================================
 
+def _json_default(value):
+    """pandas отдаёт numpy-числа, которые json сам не сериализует."""
+    if hasattr(value, "item"):
+        return value.item()
+    raise TypeError(f"не сериализуется: {type(value).__name__}")
+
+
+def save_answer_key(path="answer_key.json"):
+    """Сохраняет ключ ответов в JSON, чтобы этап сверки читал его, а не хардкод."""
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(answer_key, f, ensure_ascii=False, indent=2, default=_json_default)
+    print(f"\nКлюч ответов сохранён в {os.path.abspath(path)}")
+
+
 check_integrity()
 
 print_answer_key()
+
+save_answer_key()
