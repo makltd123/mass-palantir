@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# Генераторы синтетических данных
+pandas>=2.3
+Faker>=40
+
+# Тесты и линтер
+pytest>=8.0
+ruff>=0.6

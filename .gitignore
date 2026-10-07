@@ -4,3 +4,7 @@ __pycache__/
 .venv/
 .mimocode/
 error.txt
+*.bak
+answer_key.json
+.pytest_cache/
+.ruff_cache/

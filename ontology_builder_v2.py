@@ -6,10 +6,8 @@
 import csv
 import json
 import os
-import re
-from datetime import datetime
 from collections import defaultdict
-from difflib import SequenceMatcher
+from datetime import datetime
 
 # ── Конфигурация ──────────────────────────────────────────────
 CSV_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -65,7 +63,10 @@ def call_llm(prompt, label="LLM"):
     try:
         if not MISTRAL_API_KEY:
             raise RuntimeError("не задана переменная MISTRAL_API_KEY")
-        from mistralai.client import Mistral
+        try:  # путь импорта менялся между версиями SDK
+            from mistralai import Mistral
+        except ImportError:
+            from mistralai.client import Mistral
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model=MISTRAL_MODEL,
@@ -478,7 +479,7 @@ def print_report(low_stock):
             qty = max(item["total_ordered"], item["stock"] * 3)
             print(f"  >>> РЕКОМЕНДАЦИЯ: Заявка на {qty} шт.")
         else:
-            print(f"  До исчерпания:    нет данных по заказам")
+            print("  До исчерпания:    нет данных по заказам")
 
     print(f"\nВсего с низким остатком: {len(low_stock)}")
 
@@ -502,7 +503,7 @@ def validate(graph, classification, duplicates):
         for m in fm.get("matches", []):
             matched_columns.add(f"{m['table']}.{m['column']}")
 
-    for legacy_key, desc in renamed.items():
+    for legacy_key in renamed:
         table, col = legacy_key.split(".")
         found = legacy_key in matched_columns
         status = "ПРОЙДЕНО" if found else "ПРОВАЛЕНО"
