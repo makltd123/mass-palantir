@@ -58,3 +58,7 @@ python ontology_builder_v3.py
 ## License
 
 [MIT](LICENSE)
+
+---
+
+Author: [Fedor Makovskiy](https://fedor.alqira.ru), AI developer. Services and projects with quality metrics: [fedor.alqira.ru](https://fedor.alqira.ru).
